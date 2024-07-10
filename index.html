@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Découvrir la cryptographie avec TerangMath</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Découvrir la cryptographie avec TerangMath</h1>
+    </div>
+    <div class="icon-bar">
+        <i class="fas fa-lock" title="Sécurité"></i>
+        <i class="fas fa-laptop-code" title="Informatique"></i>
+        <i class="fas fa-square-root-alt" title="Mathématiques"></i>
+    </div>
+    <div class="container">
+        <h2><i class="fas fa-exchange-alt"></i> Chiffrement César</h2>
+        <p>Le chiffrement César décale chaque lettre d'un certain nombre de positions dans l'alphabet.</p>
+        <select id="caesarOperation">
+            <option value="encrypt">Chiffrer</option>
+            <option value="decrypt">Déchiffrer</option>
+        </select>
+        <input type="text" id="caesarInput" placeholder="Entrez le message">
+        <input type="number" id="caesarShift" placeholder="Décalage (1-25)" min="1" max="25">
+        <button onclick="caesarCipher()">Exécuter</button>
+        <div id="caesarResult" class="result"></div>
+
+        <h2><i class="fas fa-random"></i> Chiffrement par Substitution</h2>
+        <p>Le chiffrement par substitution remplace chaque lettre par une autre selon une clé prédéfinie.</p>
+        <select id="subOperation">
+            <option value="encrypt">Chiffrer</option>
+            <option value="decrypt">Déchiffrer</option>
+        </select>
+        <input type="text" id="subInput" placeholder="Entrez le message">
+        <button onclick="substitutionCipher()">Exécuter</button>
+        <div id="subResult" class="result"></div>
+
+        <h2><i class="fas fa-shield-alt"></i> Chiffrement AES</h2>
+        <p>AES (Advanced Encryption Standard) est un algorithme de chiffrement symétrique moderne.</p>
+        <select id="aesOperation">
+            <option value="encrypt">Chiffrer</option>
+            <option value="decrypt">Déchiffrer</option>
+        </select>
+        <input type="text" id="aesInput" placeholder="Entrez le message">
+        <input type="text" id="aesKey" placeholder="Clé de chiffrement/déchiffrement">
+        <button onclick="aesCipher()">Exécuter</button>
+        <div id="aesResult" class="result"></div>
+    </div>
+    <div class="footer">
+        Développé par l'association TerangMath &copy; 2024
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
